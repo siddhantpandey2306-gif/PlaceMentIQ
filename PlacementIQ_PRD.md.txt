@@ -1,0 +1,958 @@
+# PRODUCT REQUIREMENTS DOCUMENT (PRD)
+
+# PlacementIQ
+**Student Placement Readiness, Assessment & Interview Intelligence Platform**
+
+**Document version:** 1.0  
+**Product status:** Proposed — Pre-development  
+**Product type:** Web-based SaaS platform  
+**Primary users:** Students, faculty, placement officers, college administrators  
+**Initial target market:** Engineering colleges and universities  
+**Primary objective:** Assess, classify, train, and track students based on their placement readiness using measurable evidence from coding assessments, GitHub repositories, computer science fundamentals, aptitude, projects, and mock interviews.
+
+---
+
+## 1. Executive Summary
+
+PlacementIQ is a placement-readiness intelligence platform designed to help colleges systematically evaluate students and prepare them for technical placements and internships.
+
+Currently, student placement preparation often involves disconnected activities: coding practice, technical assessments, GitHub projects, mock interviews, aptitude tests, and faculty feedback. These activities may not be combined into a consistent picture of each student's strengths, weaknesses, and readiness.
+
+PlacementIQ brings these activities into one centralized platform.
+
+The platform will create a comprehensive skill profile for every student, assign a configurable readiness level (L1, L2, or L3), recommend targeted learning activities, and allow faculty to assess individuals, classes, departments, or entire graduating batches.
+
+Faculty will also be able to create customized assessments, configure interview sessions, generate AI-assisted interview questions, define evaluation rubrics, and analyze student performance.
+
+The platform's primary value is not simply ranking students. It is helping institutions answer three important questions:
+
+1. What is each student's current placement readiness?
+2. What specific skills are preventing the student from progressing?
+3. What training or assessment should happen next to improve readiness?
+
+## 2. Problem Statement
+
+### 2.1 Problems faced by students
+
+- Students do not always know whether they are genuinely prepared for technical interviews.
+- Solved-question counts do not necessarily indicate problem-solving ability.
+- Students may have GitHub repositories but lack confidence explaining their projects.
+- Weaknesses in DSA, OOP, DBMS, operating systems, computer networks, aptitude, and communication are difficult to track together.
+- Mock interview feedback is often inconsistent or difficult to compare across attempts.
+- Students may follow generic preparation plans instead of addressing their specific weaknesses.
+
+### 2.2 Problems faced by faculty
+
+- Evaluating large numbers of students individually requires considerable time.
+- Assessment results, project reviews, and interview feedback may be stored in separate documents.
+- Creating assessments and preparing suitable interview questions repeatedly requires effort.
+- Different faculty members may use inconsistent evaluation criteria.
+- Faculty need to identify students who require foundational training and those who are ready for advanced preparation.
+
+### 2.3 Problems faced by placement cells
+
+- Readiness information may be distributed across spreadsheets, learning platforms, and placement records.
+- Identifying skill gaps across a whole class or branch is difficult.
+- Placement teams need evidence of student improvement over time.
+- Institutions need a consistent method to monitor training effectiveness.
+
+## 3. Product Vision
+
+Build a centralized, evidence-based placement preparation platform that enables colleges to assess students consistently, deliver personalized training, and measure improvement from foundational learning to interview readiness.
+
+### Product principles
+
+1. Evidence-based assessment rather than assumptions.
+2. Transparent readiness classification.
+3. Personalized improvement instead of static ranking.
+4. Faculty control over assessments and interview criteria.
+5. Bulk assessment and reporting for institutional use.
+6. Secure handling of student information.
+7. Human review for important AI-assisted decisions.
+8. Measurable improvement over time.
+
+## 4. Goals and Non-Goals
+
+### 4.1 Product goals
+
+- Create a unified profile for every student.
+- Assess students across multiple placement-related dimensions.
+- Classify students into L1, L2, and L3 using configurable rules.
+- Allow assessments to be assigned individually or in bulk.
+- Integrate GitHub repository analysis.
+- Provide faculty-controlled interview and test creation.
+- Generate AI-assisted questions and structured feedback.
+- Identify individual, class-level, and college-wide skill gaps.
+- Recommend targeted training and reassessments.
+- Track student progression across assessment cycles.
+
+### 4.2 Non-goals for the initial release
+
+The first version will not attempt to:
+
+- Guarantee placement or predict hiring decisions with certainty.
+- Replace human faculty or professional interviewers.
+- Automatically reject students from placement opportunities.
+- Replicate a complete coding practice platform.
+- Build a full learning management system.
+- Provide unrestricted execution of student-submitted code.
+- Use AI-generated scores as unquestionable measures of ability.
+- Integrate with every job portal or learning platform at launch.
+
+## 5. Target Users and Roles
+
+### 5.1 Student
+
+The student can:
+
+- Create and manage a profile.
+- Connect an authorized GitHub account.
+- Take assigned tests.
+- Participate in mock interviews.
+- View readiness levels and skill scores.
+- Review strengths, weaknesses, and faculty feedback.
+- Follow a personalized preparation plan.
+- Track improvement across assessments.
+
+### 5.2 Faculty or Trainer
+
+Faculty can:
+
+- View authorized students and classes.
+- Create classes, batches, and groups.
+- Assign assessments to individuals or groups.
+- Create and edit question banks.
+- Configure interview sessions.
+- Generate AI-assisted questions.
+- Conduct and evaluate interviews.
+- Review student profiles and skill gaps.
+- Provide feedback and assign training.
+- Monitor improvement after reassessment.
+
+### 5.3 Placement Officer
+
+Placement officers can:
+
+- View authorized department and batch analytics.
+- Monitor readiness distributions.
+- Identify common skill gaps.
+- Track training and assessment participation.
+- Compare results across classes and branches.
+- Export authorized reports.
+- Monitor readiness trends over time.
+
+### 5.4 College Administrator
+
+Administrators can:
+
+- Configure institutional settings.
+- Manage departments, academic years, and user access.
+- Assign roles and permissions.
+- Manage faculty and student imports.
+- Configure institution-wide readiness policies.
+- Review audit records and system activity.
+- Control data retention and institutional integrations.
+
+### 5.5 Role and permission principle
+
+Every user must have a defined role and scope of access. A faculty member assigned to one class must not automatically receive access to all students across the institution.
+
+---
+
+## 6. Core Product Modules
+
+### Module 1: Student Profile and Onboarding
+
+**Objective:** Create a centralized profile containing the information required for placement readiness assessment.
+
+#### Functional requirements
+
+- Students can register or join through an institution-provided invitation.
+- The platform records name, student identifier, branch, academic year, graduation year, and other institution-approved fields.
+- Students can add skills, projects, GitHub links, and relevant experience.
+- Students can connect GitHub using an authorized integration.
+- Faculty can import student records through a validated CSV file.
+- Duplicate student records must be detected and handled.
+- Students can view and update permitted profile information.
+- Profiles display assessment history and the last assessment date.
+
+#### Acceptance criteria
+
+- A student can complete onboarding and access their dashboard.
+- Imported records are validated before being saved.
+- Duplicate identifiers are rejected or flagged for review.
+- Students cannot access another student's private profile without permission.
+
+### Module 2: Placement Assessment Engine
+
+**Objective:** Evaluate student readiness across technical and non-technical skills.
+
+#### Assessment categories
+
+1. DSA and coding.
+2. Object-oriented programming.
+3. DBMS and SQL.
+4. Operating systems.
+5. Computer networks.
+6. Aptitude and logical reasoning.
+7. Projects and software development.
+8. Communication and technical explanation.
+9. Technical mock interviews.
+
+#### Functional requirements
+
+- Faculty can create assessments using predefined or custom categories.
+- Assessments can include MCQs, coding questions, SQL queries, short answers, and practical project questions.
+- Each question supports configurable difficulty, topic, marks, and evaluation criteria.
+- Assessments can have a time limit, start date, deadline, and attempt limit.
+- Faculty can assign assessments to one student, a group, a class, or an authorized batch.
+- Results are calculated according to the configured marking scheme.
+- Students can view permitted results and explanations.
+- Faculty can inspect individual responses and override scores when authorized.
+- The system stores assessment attempts and historical results.
+
+#### Coding assessment requirements
+
+The system should eventually support:
+
+- Multiple programming languages.
+- Sample and hidden test cases.
+- Compilation and execution results.
+- Time and memory limits.
+- Partial scoring.
+- Test-case-based evaluation.
+- Detection of failed test cases.
+- Submission history.
+
+Code must execute in a restricted, isolated environment rather than directly on the application server.
+
+### Module 3: GitHub Repository Analysis
+
+**Objective:** Assess observable software development practices and help students explain their projects.
+
+#### Functional requirements
+
+- Students can connect an authorized GitHub account or submit a repository URL.
+- The system retrieves repository information permitted by the student's authorization.
+- The platform analyzes documentation, project structure, language usage, testing, dependencies, and development practices where observable.
+- It generates a repository review report.
+- Faculty can inspect the evidence behind the report.
+- Students can select which private repositories they want to share.
+- The platform distinguishes between public repository analysis and authorized private repository analysis.
+
+#### Example evaluation dimensions
+
+| Dimension | Example evidence |
+|---|---|
+| Documentation | README completeness, setup instructions |
+| Code organization | Directory structure, modularity |
+| Testing | Available tests and test configuration |
+| Development practices | Pull requests, reviews, CI configuration |
+| Project complexity | Architecture, integrations, functionality |
+| Maintainability | Dependencies, code organization, documentation |
+
+#### Important limitations
+
+Repository activity, language statistics, and commit counts are not reliable measures of skill by themselves.
+
+The platform must not claim to verify authorship merely because a student owns or links a repository. Project defense, code walkthroughs, or other direct assessments should be used to establish understanding.
+
+#### Acceptance criteria
+
+- The system generates a report for a supported repository.
+- Each major evaluation dimension includes a score or an explicit unavailable status.
+- The report identifies evidence and limitations.
+- API failures, private repositories, and rate limits are handled gracefully.
+
+### Module 4: L1/L2/L3 Readiness Classification
+
+**Objective:** Convert assessment evidence into an understandable and actionable readiness classification.
+
+#### Initial classification model
+
+**L1 — Foundation**
+
+The student needs structured support in foundational skills.
+
+Typical indicators include inconsistent coding performance, gaps in CS fundamentals, or difficulty explaining projects.
+
+**L2 — Developing**
+
+The student demonstrates foundational knowledge but needs greater consistency, deeper understanding, or additional interview practice.
+
+**L3 — Placement Ready**
+
+The student demonstrates consistent performance across the institution's defined placement-readiness criteria.
+
+These are operational categories, not permanent labels.
+
+#### Initial scoring weights
+
+| Dimension | Weight |
+|---|---:|
+| DSA and coding | 25% |
+| CS fundamentals | 20% |
+| Project and GitHub assessment | 15% |
+| Mock interviews | 20% |
+| Aptitude and reasoning | 10% |
+| Communication | 10% |
+| **Total** | **100%** |
+
+The weights must be configurable by an authorized administrator.
+
+#### Example thresholds
+
+- L1: below 50.
+- L2: 50–74.99.
+- L3: 75 and above.
+
+These thresholds are provisional and must be validated through pilot assessments and faculty review.
+
+#### Classification rules
+
+- The system normalizes eligible assessment scores to a common scale.
+- The overall score is calculated using configured weights.
+- Unassessed dimensions are marked as missing rather than automatically scored zero.
+- Minimum evidence requirements must be met before a final readiness level is assigned.
+- Critical-skill requirements can prevent a student from receiving L3 despite a high overall score.
+- Students can receive provisional or low-confidence classifications when evidence is incomplete.
+- Faculty can review classifications and record justified overrides.
+- Every classification change must preserve its reason, timestamp, and supporting assessment records.
+
+#### Example calculation
+
+A student receives these normalized scores:
+
+| Dimension | Score | Weight |
+|---|---:|---:|
+| Coding | 80 | 25% |
+| CS fundamentals | 70 | 20% |
+| Projects | 75 | 15% |
+| Mock interviews | 65 | 20% |
+| Aptitude | 85 | 10% |
+| Communication | 70 | 10% |
+
+The weighted score is:
+
+25% × 80 + 20% × 70 + 15% × 75 + 20% × 65 + 10% × 85 + 10% × 70 = **73.25/100**.
+
+Under the provisional thresholds, this student falls into L2.
+
+The profile should also display the individual skill scores so the overall result does not hide the student's strengths or weaknesses.
+
+### Module 5: AI Interview Studio
+
+**Objective:** Enable faculty to configure, prepare, conduct, and evaluate interviews with AI assistance.
+
+#### Interview configuration
+
+Faculty should be able to configure:
+
+- Interview type.
+- Topics and subtopics.
+- Difficulty level.
+- Duration.
+- Number of questions.
+- Question format.
+- Evaluation criteria.
+- Follow-up question behavior.
+- Target role or company-style interview.
+- Student level or selected group.
+- Whether the session is faculty-led or AI-led practice.
+
+#### Interview types
+
+- Technical interview.
+- HR and behavioral interview.
+- Project defense.
+- DSA and coding interview.
+- CS fundamentals interview.
+- Full placement simulation.
+
+#### AI capabilities
+
+- Generate interview plans from faculty instructions.
+- Generate questions for selected topics.
+- Suggest expected answer points and evaluation rubrics.
+- Suggest follow-up questions based on student responses.
+- Identify areas requiring clarification.
+- Produce structured feedback after the interview.
+- Recommend areas for further practice.
+
+#### Faculty controls
+
+Faculty must be able to:
+
+- Edit generated questions.
+- Add their own questions.
+- Remove unsuitable questions.
+- Approve the final interview plan.
+- Review AI-generated evaluations.
+- Enter manual scores and comments.
+- Override suggested scores with a recorded reason.
+
+#### Interview evaluation criteria
+
+- Conceptual correctness.
+- Problem-solving approach.
+- Technical depth.
+- Communication and clarity.
+- Complexity analysis.
+- Handling of edge cases.
+- Project understanding.
+- Ability to respond to follow-up questions.
+
+Criteria must depend on the interview type. For example, a coding interview should not be scored using the same rubric as an HR interview.
+
+#### Acceptance criteria
+
+- Faculty can save, edit, and reuse interview templates.
+- AI-generated questions are editable before use.
+- Every evaluation includes the rubric and evidence used.
+- Faculty can override AI-generated results.
+- The system records the final evaluator and evaluation timestamp.
+
+### Module 6: Test and Question Bank Builder
+
+**Objective:** Let faculty create assessments from their own questions or AI-generated suggestions.
+
+#### Functional requirements
+
+- Create, edit, archive, and organize question banks.
+- Categorize questions by subject, topic, difficulty, and question type.
+- Import faculty-provided questions.
+- Generate question suggestions using AI.
+- Preview and edit AI-generated questions.
+- Create tests using selected questions.
+- Assign tests to selected groups.
+- Configure marks, deadlines, time limits, and attempts.
+- Reuse approved questions in later assessments.
+- Store answer keys and grading rubrics with appropriate access restrictions.
+
+#### Anti-cheating and integrity considerations
+
+The system can use randomized question order, controlled variants, attempt limits, and server-side grading.
+
+It must not promise perfect cheating detection. Unusual activity can be flagged for review, but flags should not automatically be treated as proof of misconduct.
+
+### Module 7: Student Improvement Planner
+
+**Objective:** Convert assessment results into actionable preparation plans.
+
+#### Functional requirements
+
+- Identify weak topics from recent assessments.
+- Recommend relevant practice tasks and revision activities.
+- Allow faculty to assign resources and deadlines.
+- Track task completion and subsequent assessment results.
+- Recommend reassessment after a training cycle.
+- Display progress across skill categories.
+- Allow faculty to create different plans for L1, L2, and L3 cohorts.
+
+#### Example
+
+If a student struggles with recursion, binary search, and time complexity, the platform could recommend a structured practice sequence, assign a short assessment, and schedule a follow-up review.
+
+Recommendations should be explainable and based on available assessment evidence.
+
+### Module 8: Class and College Analytics
+
+**Objective:** Provide faculty and placement officers with useful aggregate insights.
+
+#### Dashboard filters
+
+- Academic year.
+- Graduation year.
+- Branch.
+- Class or section.
+- Selected group.
+- Readiness level.
+- Assessment type.
+- Assessment date range.
+
+#### Key dashboard metrics
+
+- Total enrolled students.
+- Students with completed profiles.
+- Assessment participation.
+- L1/L2/L3 distribution.
+- Average scores by skill.
+- Common skill gaps.
+- Interview completion rate.
+- Student improvement between assessments.
+- Training completion.
+- Readiness trends across assessment cycles.
+
+#### Functional requirements
+
+- Display individual and aggregate reports according to permissions.
+- Support filtering and sorting.
+- Allow authorized exports.
+- Show the time period and assessment population behind each metric.
+- Distinguish missing assessments from poor performance.
+- Track historical readiness changes.
+- Support comparisons across classes and batches.
+
+#### Example institutional insight
+
+A placement officer may discover that a large proportion of one graduating batch struggles with DBMS and SQL.
+
+The officer can then assign a targeted training program, run a follow-up assessment, and compare results to evaluate whether performance improved.
+
+---
+
+## 7. Core User Workflows
+
+### Workflow A: Student onboarding and assessment
+
+1. Student joins the institution's workspace.
+2. Student completes their profile.
+3. Student connects a GitHub account if desired or required for a specific assessment.
+4. Student completes assigned assessments.
+5. The system processes results and updates the skill profile.
+6. The platform calculates readiness when sufficient evidence is available.
+7. Student receives a readiness report and recommended next steps.
+
+### Workflow B: Faculty creates and assigns a test
+
+1. Faculty signs in.
+2. Faculty selects a class or group.
+3. Faculty opens the test builder.
+4. Faculty selects existing questions, adds custom questions, or generates AI suggestions.
+5. Faculty configures the marking scheme and schedule.
+6. Faculty reviews and publishes the test.
+7. Students complete the test.
+8. The system grades supported question types.
+9. Faculty reviews results and class-level analytics.
+
+### Workflow C: Faculty configures interviews
+
+1. Faculty opens the Interview Studio.
+2. Faculty chooses an interview type, topics, duration, and difficulty.
+3. Faculty enters custom instructions or selects an existing template.
+4. AI suggests questions and evaluation criteria.
+5. Faculty edits and approves the interview.
+6. Faculty conducts the interview or assigns AI-led practice.
+7. The platform generates an evaluation report.
+8. Faculty reviews and finalizes the results.
+
+### Workflow D: College-wide assessment
+
+1. Administrator imports or confirms student records.
+2. Faculty and placement officers organize students into authorized groups.
+3. Assessments are assigned to selected classes or batches.
+4. Results are aggregated by the analytics engine.
+5. The placement officer reviews readiness levels and skill gaps.
+6. Training is assigned to relevant groups.
+7. Follow-up assessments measure progress.
+
+---
+
+## 8. Functional Requirements Summary
+
+| ID | Requirement | Priority |
+|---|---|---|
+| FR-01 | Secure authentication and role-based access | P0 |
+| FR-02 | Student profiles and bulk import | P0 |
+| FR-03 | Classes, batches, and group management | P0 |
+| FR-04 | Assessment creation and assignment | P0 |
+| FR-05 | Scoring and assessment history | P0 |
+| FR-06 | L1/L2/L3 classification engine | P0 |
+| FR-07 | Individual and class dashboards | P0 |
+| FR-08 | Question bank management | P0 |
+| FR-09 | GitHub repository analysis | P1 |
+| FR-10 | AI-assisted question generation | P1 |
+| FR-11 | Faculty interview configuration | P1 |
+| FR-12 | AI-assisted interview feedback | P1 |
+| FR-13 | Personalized improvement plans | P1 |
+| FR-14 | Secure coding execution | P2 |
+| FR-15 | Advanced trend analytics | P2 |
+| FR-16 | External placement system integrations | P2 |
+
+**Priority definitions**
+
+- P0: Required for the first usable MVP.
+- P1: High-value features for the next release.
+- P2: Advanced features for later releases.
+
+---
+
+## 9. Non-Functional Requirements
+
+### Performance
+
+- Common dashboard pages should aim to load within two seconds under normal pilot conditions.
+- Long-running repository analysis and AI tasks should run asynchronously.
+- Bulk operations should report progress and errors.
+- The system should paginate large datasets rather than load every student record at once.
+
+### Security
+
+- Enforce authentication and server-side authorization.
+- Protect against SQL injection, cross-site scripting, cross-site request forgery where applicable, and insecure direct object references.
+- Encrypt traffic using HTTPS.
+- Secure sensitive data at rest.
+- Store API credentials and AI provider keys in a secret manager or secure environment configuration.
+- Use short-lived, scoped access tokens where appropriate.
+- Maintain audit logs for sensitive actions.
+- Apply rate limits to sensitive and resource-intensive endpoints.
+
+### Reliability
+
+- Use database transactions for important operations.
+- Provide backups and a tested restoration procedure.
+- Handle third-party API failures gracefully.
+- Avoid losing assessment responses during network interruptions.
+- Record background-job failures and support safe retries.
+
+### Scalability
+
+- Support multiple institutions with strict tenant isolation if the product becomes multi-college SaaS.
+- Use database indexing, pagination, and optimized aggregate queries.
+- Queue expensive AI and repository-analysis tasks.
+- Separate code execution from the main application.
+- Introduce additional services only when usage and bottlenecks justify them.
+
+### Accessibility and usability
+
+- Responsive desktop and mobile interfaces.
+- Keyboard-accessible forms and navigation.
+- Readable typography and clear error messages.
+- Consistent layouts for student, faculty, and administrator dashboards.
+- Avoid relying on color alone to communicate readiness levels.
+
+---
+
+## 10. Proposed Technical Architecture
+
+### Frontend
+
+**React + TypeScript**
+
+Responsibilities:
+
+- Student dashboard.
+- Faculty dashboard.
+- Interview Studio.
+- Test builder.
+- Analytics and reports.
+- Forms, filters, and responsive navigation.
+
+### Backend
+
+**Java + Spring Boot**
+
+Responsibilities:
+
+- Authentication and authorization.
+- User and institution management.
+- Assessment services.
+- Scoring and classification.
+- Interview workflows.
+- GitHub integration.
+- AI orchestration.
+- Analytics APIs.
+- Audit logging.
+
+### Database
+
+**PostgreSQL**
+
+Responsibilities:
+
+- Store users, institutions, classes, assessments, attempts, results, interviews, rubrics, and classification history.
+- Maintain relational integrity.
+- Support reporting queries and indexed filtering.
+
+### AI integration
+
+An LLM provider can be integrated through a dedicated backend module.
+
+The AI layer should:
+
+- Generate structured question drafts.
+- Follow faculty-provided rubrics and constraints.
+- Produce structured evaluation suggestions.
+- Validate outputs before saving.
+- Record model and prompt versions where appropriate.
+- Avoid sending unnecessary personal information to external providers.
+
+### GitHub integration
+
+Use authorized GitHub APIs to obtain repository metadata and selected content within the approved permissions.
+
+### Coding execution
+
+Use an isolated code execution service with CPU, memory, time, filesystem, network, and process restrictions.
+
+### Deployment
+
+A managed application host, managed PostgreSQL database, secure secret storage, logging, and monitoring can support the initial release.
+
+Start with a modular monolith. Microservices are not necessary for the first version.
+
+---
+
+## 11. High-Level Data Model
+
+The database should include the following entities.
+
+| Entity | Purpose |
+|---|---|
+| Institution | College or university account |
+| User | Shared identity and account information |
+| Role and Permission | Access control |
+| StudentProfile | Student academic and profile information |
+| FacultyProfile | Faculty-specific information |
+| Department | Institutional department |
+| AcademicBatch | Graduation year or academic batch |
+| ClassGroup | Class, section, or selected group |
+| GroupMembership | User membership in groups |
+| Skill | Standardized skill taxonomy |
+| Assessment | Assessment metadata and configuration |
+| Question | Question content and classification |
+| QuestionOption | MCQ options and answer configuration |
+| TestAssignment | Assessment assigned to a target group |
+| AssessmentAttempt | A student's attempt |
+| Submission | Answers and coding submissions |
+| Evaluation | Scores, rubric results, and feedback |
+| RepositoryConnection | Authorized GitHub connection metadata |
+| RepositoryAnalysis | Analysis results and evidence |
+| InterviewTemplate | Reusable interview configuration |
+| InterviewSession | Individual interview session |
+| InterviewQuestion | Questions used during a session |
+| InterviewEvaluation | Interview scores and feedback |
+| ReadinessSnapshot | Dated readiness result |
+| ImprovementPlan | Recommended or assigned training |
+| TrainingTask | Individual preparation activity |
+| AuditLog | Record of sensitive system actions |
+
+### Data design principles
+
+- Use stable identifiers and appropriate foreign keys.
+- Separate user authentication from student profile information.
+- Store assessment history instead of overwriting old results.
+- Record scoring rules and rubric versions for reproducibility.
+- Store aggregate results separately only when useful for performance.
+- Scope institution-owned records to their institution.
+- Avoid storing unnecessary GitHub tokens or sensitive interview recordings.
+
+---
+
+## 12. Security, Privacy, and Responsible AI
+
+Student performance data is sensitive within an educational context and must be handled carefully.
+
+The platform should:
+
+- Collect only necessary information.
+- Explain why each assessment or integration is used.
+- Obtain appropriate authorization before accessing private repositories.
+- Define who can view individual scores and interview feedback.
+- Provide students with access to their own assessment history.
+- Allow correction of inaccurate profile information.
+- Establish retention and deletion rules.
+- Record important administrative and scoring changes.
+- Require appropriate consent and safeguards for interview recording.
+- Avoid using protected personal characteristics to determine readiness.
+- Test for unfair differences in scoring across student groups.
+- Provide a process to challenge or review classifications.
+- Ensure that AI-generated feedback is explainable and reviewable.
+
+Readiness classifications must not be treated as guarantees of employment outcomes. They should inform preparation and support rather than become permanent labels or automatic grounds for exclusion.
+
+---
+
+## 13. Success Metrics
+
+The product should measure whether it improves the assessment and preparation process.
+
+### Adoption metrics
+
+- Number of active students.
+- Number of active faculty members.
+- Percentage of student profiles completed.
+- Percentage of assigned assessments completed.
+- Number of interviews conducted.
+
+### Operational metrics
+
+- Time required to create an assessment.
+- Time required to evaluate a batch.
+- Time required to prepare an interview.
+- AI generation failure rate.
+- Assessment completion and grading reliability.
+
+### Learning and readiness metrics
+
+- Improvement in skill-specific assessment scores.
+- Change in readiness levels across assessment cycles.
+- Reduction in recurring skill gaps.
+- Mock interview score improvement.
+- Percentage of students completing assigned improvement plans.
+
+### Quality metrics
+
+- Faculty agreement with AI-assisted evaluations.
+- Frequency of manual scoring corrections.
+- Student-reported usefulness of feedback.
+- Rate of disputed or corrected classification decisions.
+
+### Initial pilot targets
+
+These are proposed targets, not established results:
+
+- At least 90% successful completion of scheduled assessments, excluding documented connectivity or availability issues.
+- At least 30% reduction in faculty time spent preparing standard interview plans.
+- Measurable improvement in selected skill assessments after a training cycle.
+- At least 80% faculty satisfaction with the usefulness of batch analytics.
+
+Targets should be revised after the first pilot and measured against a documented baseline.
+
+---
+
+## 14. MVP Scope
+
+The first release should focus on the minimum functionality needed to test the core product hypothesis.
+
+### Included in MVP
+
+1. Authentication and role-based permissions.
+2. Student profiles.
+3. Institution, class, and group management.
+4. Bulk student import.
+5. Faculty-created MCQ and short-answer assessments.
+6. Assessment assignment and basic grading.
+7. Initial L1/L2/L3 classification engine.
+8. Individual student dashboard.
+9. Class-wise readiness dashboard.
+10. Assessment history and skill breakdown.
+11. Faculty question bank.
+12. Basic CSV reporting.
+
+### Deferred until after the MVP
+
+- Advanced AI-led interviews.
+- Deep repository analysis.
+- Automated coding execution.
+- Audio and video interview evaluation.
+- Complex predictive analytics.
+- External job portal integrations.
+- Advanced recommendation models.
+
+The MVP should validate whether faculty can assess a batch efficiently and whether students find the readiness profile and training recommendations useful.
+
+---
+
+## 15. Development Roadmap
+
+### Phase 1: Foundation
+
+- Define data model.
+- Build authentication and permissions.
+- Implement institution, class, and student management.
+- Create student profiles.
+- Build initial responsive dashboards.
+
+### Phase 2: Assessments and classification
+
+- Create question bank.
+- Build assessment authoring.
+- Implement assignment and submission workflows.
+- Implement scoring.
+- Implement readiness classification.
+- Build assessment history and reports.
+
+### Phase 3: Batch analytics
+
+- Add class-level filtering and reporting.
+- Build skill-gap analysis.
+- Add historical comparisons.
+- Add CSV exports and training assignments.
+
+### Phase 4: GitHub intelligence
+
+- Add authorized GitHub connections.
+- Analyze repository documentation and structure.
+- Generate evidence-backed reports.
+- Add project-defense assessments.
+
+### Phase 5: AI interview system
+
+- Build the Interview Studio.
+- Add configurable templates and rubrics.
+- Generate editable interview questions.
+- Add interview sessions and feedback.
+- Allow faculty review and scoring overrides.
+
+### Phase 6: Production hardening
+
+- Complete security testing.
+- Add monitoring, backups, and recovery procedures.
+- Load-test batch workflows.
+- Validate readiness scoring with faculty.
+- Run a controlled college pilot.
+- Address user feedback before broader deployment.
+
+---
+
+## 16. Key Risks and Mitigations
+
+| Risk | Mitigation |
+|---|---|
+| Incorrect readiness classification | Use configurable rubrics, minimum evidence rules, validation, and review |
+| AI-generated questions are inaccurate | Require faculty review and use structured output validation |
+| GitHub metrics misrepresent skills | Combine repository evidence with direct project assessment |
+| Students game the scoring system | Use multiple assessment types and review suspicious patterns |
+| Faculty find the platform difficult | Test workflows with faculty before expanding functionality |
+| Third-party API limits | Cache permitted data, queue jobs, and handle rate limits |
+| Student data exposure | Enforce access controls, tenant isolation, encryption, and audit logs |
+| Large batches slow down the platform | Use pagination, background jobs, indexing, and load testing |
+| Excessive scope delays delivery | Prioritize the MVP and defer advanced AI capabilities |
+
+---
+
+## 17. Acceptance Criteria for the Initial Release
+
+The MVP is ready for a controlled pilot when:
+
+- Students and faculty can sign in and access the correct role-specific interfaces.
+- Faculty can create classes and import student records.
+- Faculty can create, assign, and evaluate supported assessments.
+- Students can complete assessments and view permitted results.
+- The system calculates readiness according to documented rules.
+- Missing evidence is clearly distinguished from low scores.
+- Class dashboards show accurate distributions and skill-level aggregates.
+- Assessment history is retained.
+- Unauthorized users cannot access protected student records.
+- Core workflows pass automated tests.
+- Backups and restoration have been tested.
+- Faculty can review and correct assessment results where permitted.
+
+## 18. Assumptions and Open Decisions
+
+The following decisions must be finalized before implementation:
+
+1. Whether students register independently or join through institutional invitations.
+2. Whether the first pilot will cover one class, one branch, or multiple departments.
+3. Which coding languages the initial assessment system will support.
+4. Whether classification thresholds are standardized institution-wide or configurable by department.
+5. Whether GitHub integration is optional or required for selected assessments.
+6. Which AI provider and budget constraints will apply.
+7. Whether AI-led interviews will be included in the first public release.
+8. What data retention, consent, and institutional approval policies are required.
+9. Whether the initial deployment is for a single college or designed as multi-tenant SaaS from the beginning.
+
+## 19. Final Product Definition
+
+PlacementIQ is an institutional placement-readiness platform that combines student assessment, evidence-backed skill profiling, configurable L1/L2/L3 classification, GitHub repository review, faculty-controlled testing, AI-assisted interviews, and class-wide analytics.
+
+Its core workflow is:
+
+**Assess → Analyze → Classify → Train → Reassess → Measure Improvement**
+
+The product succeeds when students understand exactly what they need to improve, faculty can assess and train larger groups efficiently, and placement officers can make better-informed decisions using reliable evidence.
+
+The first implementation priority is the assessment and classification engine, supported by student profiles and batch analytics. GitHub intelligence and the AI Interview Studio should build on that foundation rather than replace it.
+
+**Product success should be demonstrated through measurable improvements in assessment quality, faculty efficiency, student preparation, and interview readiness—not merely through the number of features delivered.**

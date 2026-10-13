@@ -1,0 +1,383 @@
+# PlacementIQ — Design System
+
+PlacementIQ should look like a professional, modern college placement intelligence platform rather than a generic AI dashboard. The design should make it easy for students to understand their readiness, faculty to conduct assessments, and placement officers to track overall placement preparation.
+
+The recommended direction is light-first, clean, data-rich, and approachable, with a restrained blue-and-teal palette, clear typography, consistent cards, and simple navigation.
+
+## 1. Visual direction
+
+[UXPIVOT — Product-Focused UI/UX Design Studio](https://images.openai.com/static-rsc-4/mYQhNDm5Gw0aDJeU8EpH35-HNXIjaHa3UbCugEa6ht5eptCkVuk5wLxD9Fg6GMkaQhmST9tG8JHsiI6Erdyt6zIhMmVkhDaYs9ui83zYrb55jVFOcyjWTssNf8zxi1qK0eEtPElqFSGljX334J9zWDYU5pqR3WsmeqJ6r54rnSM?purpose=inline)
+
+Professional SaaS dashboard
+
+For faculty, placement officers, and administrators. Clear metrics, tables, charts, and filters without visual clutter.
+
+[NOCODIM — No-Code Education & Development Platform](https://images.openai.com/static-rsc-4/CxmiTcmzK3Gk6YEOCBW0NOj18cuRXueras59zBv0CQBOiYK934wj9TVaAP2YVzXQkbv4qbCLxaVN6J7aQJAvuGucHIFjPwl6ixGmH-HUTsJUEXBRXqNf43BvkgPVXUchrorht5jk_9ICD17CGlEbszHoq0HuTsHZ_Fikd1u-KD8?purpose=inline)
+
+Student growth experience
+
+For readiness scores, skill gaps, coding progress, interview feedback, and personalized learning plans.
+
+[HR Recruitment Software for HR Teams and Recruiters | uRecruits](https://images.openai.com/static-rsc-4/DCyE7meUHvTnomUFuYI76rucMYoHI8k3QEJJrbLW1AYGbrfwswFW8zKBXRDWKNMhNCmmbTVnc5Pccs-fvPqrZXwVlBmphiymwbCLsHgtLOZpvGo1iq65uJ96zYtiwe1RgNGJYO4AtOplq3smaAMfQbLCddfvzwztfphqCx5ruYc?purpose=inline)
+
+Focused assessment workspace
+
+For tests and mock interviews. Minimize distractions and make questions, timers, controls, and feedback easy to scan.
+
+## 2. Color palette
+
+Use a consistent light theme across every page. Blue communicates trust and intelligence, teal represents progress, and semantic colors communicate performance without relying on color alone.
+
+Core brand colors
+
+Primary blue
+
+`#2449D8`
+
+Buttons, active navigation, links
+
+Teal
+
+`#0F9D8A`
+
+Progress, positive trends, skill growth
+
+App background
+
+`#F5F7FB`
+
+Main application canvas
+
+Surface white
+
+`#FFFFFF`
+
+Cards, dialogs, forms
+
+Text and semantic colors
+
+Primary text
+
+Headings and important values
+
+\#172033
+
+Secondary text
+
+Descriptions and metadata
+
+\#667085
+
+Border
+
+Card outlines and separators
+
+\#E4E8F0
+
+Success
+
+Completed assessments and strong results
+
+\#15803D
+
+Warning
+
+Needs improvement or approaching deadlines
+
+\#B45309
+
+Error
+
+Failed submissions and critical errors
+
+\#B42318
+
+Information
+
+Guidance and neutral notices
+
+\#1D4ED8
+
+Usage rules
+
+- Use primary blue for the main action on a page, not every button.
+- Use teal as an accent, not as a second dominant brand color.
+- Use red only for errors, failures, or genuinely critical states.
+- Pair status colors with text labels and icons.
+- Avoid gradients on every card, neon colors, and dark backgrounds across the application.
+
+## 3. Typography
+
+Use Inter as the primary font. It is clean, readable, and suitable for both dashboards and assessment interfaces.
+
+| Element             | Size     | Weight  |
+| ------------------- | -------- | ------- |
+| Page title          | 28–32 px | 600–700 |
+| Section heading     | 20–24 px | 600     |
+| Card heading        | 16–18 px | 600     |
+| Body text           | 14–16 px | 400     |
+| Labels and metadata | 12–13 px | 400–500 |
+| KPI number          | 28–36 px | 600–700 |
+| Buttons             | 14 px    | 500–600 |
+
+Use sentence case for headings, such as “Student readiness overview,” rather than writing everything in uppercase. Reserve tabular numerals for scores, counts, timers, and percentages.
+
+## 4. Layout and spacing
+
+Desktop layout specification
+
+Top bar · 64–72 px
+
+Logo, global search, notifications, profile
+
+Sidebar
+
+Dashboard
+
+Students
+
+Assessments
+
+Interviews
+
+Reports
+
+Page title and actions
+
+Readiness score
+
+Students assessed
+
+Charts, tables, and actionable insights
+
+Illustrative layout, not a finished application screen.
+
+Recommended dimensions:
+
+- Sidebar: 240–256 px expanded, with an optional collapsed state.
+- Main content: flexible width, with a maximum content width around 1440 px.
+- Main page padding: 24–32 px on desktop; 16 px on mobile.
+- Spacing scale: 4, 8, 12, 16, 24, 32, 40, and 48 px.
+- Card padding: 20–24 px.
+- Standard card radius: 12 px; modal radius: 16 px.
+- Use subtle borders and minimal shadows instead of floating every component.
+
+## 5. Component system
+
+All pages should reuse the same components instead of implementing slightly different versions of the same element.
+
+### Buttons
+
+Create assessment
+
+Cancel
+
+View report
+
+Primary, secondary, and soft buttons. Use one dominant primary action per section. Button height should generally be 40–44 px.
+
+### Readiness KPI card
+
+Overall readiness
+
+# 78/100
+
+↑ 6 points this month
+
+Example only. The score and trend must come from actual assessment data.
+
+### Status badges
+
+Completed
+
+Needs improvement
+
+At risk
+
+In progress
+
+Not assessed
+
+Every badge should communicate a defined system state. Do not use readiness tiers as decorative labels.
+
+### Forms and tables
+
+Forms use visible labels, short helper text, clear validation messages, and consistent field heights. Tables use aligned columns, readable row spacing, sortable headers, filters, pagination, and clear empty states.
+
+Student
+
+Score
+
+Level
+
+Aarav Sharma
+
+84
+
+L3
+
+Priya Verma
+
+67
+
+L2
+
+Kabir Singh
+
+42
+
+L1
+
+Fictional sample data for the component preview.
+
+## 6. Product navigation and page patterns
+
+Use role-based navigation. The interface should reveal relevant tools without overwhelming users with every platform feature.
+
+| Role              | Main navigation                                                                                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------ |
+| Student           | Dashboard, My Skills, Coding Practice, Assessments, Mock Interviews, GitHub Analysis, Improvement Plan |
+| Faculty           | Dashboard, Student Directory, Interviews, Question Bank, Test Builder, Results                         |
+| Placement officer | Overview, Students, Readiness Distribution, At-Risk Students, Reports, Placement Outcomes              |
+| Administrator     | Users and Roles, Departments, Assessment Settings, Integrations, Audit Logs                            |
+
+Recommended page patterns:
+
+- Dashboard: KPI cards, readiness distribution, recent activity, and a short list of recommended actions.
+- Student profile: profile summary, skill breakdown, assessment history, interview feedback, verified GitHub evidence, and improvement plan.
+- Interview studio: candidate context, interview stage, question area, timer, notes, and evaluation panel.
+- Test builder: question library, difficulty filters, selected-question list, test settings, preview, and publish action.
+- Analytics: cohort filters, distribution charts, detailed student tables, and export controls.
+
+## 7. L1, L2, and L3 visual treatment
+
+Keep the levels visually consistent and make their definitions accessible wherever they appear.
+
+L1 — Foundation
+
+Developing fundamentals, basic problem-solving, and confidence.
+
+Foundation
+
+L2 — Developing
+
+Applying concepts, solving intermediate problems, and explaining approaches.
+
+Developing
+
+L3 — Placement ready
+
+Demonstrating consistent performance across the defined assessment criteria.
+
+Advanced
+
+Important: do not determine a student's level from coding score alone. Base it on the platform's documented scoring rules and sufficient assessment evidence. Show students why they received a level and how to improve it.
+
+## 8. Charts and data visualization
+
+Use charts only when they help users make decisions.
+
+- Bar charts: compare student groups, skills, or departments.
+- Line charts: show readiness and assessment progress over time.
+- Horizontal bars: show individual skill scores and skill gaps.
+- Donut charts: show cohort readiness distribution when there are only a few categories.
+- Tables: support exact comparisons, searching, sorting, and follow-up actions.
+
+Avoid 3D charts, excessive gradients, too many colors, and charts without labels. Include tooltips, accessible legends, and a tabular alternative when the data is important.
+
+## 9. AI interview and assessment design
+
+These screens need their own focused layout while retaining the shared design system.
+
+AI Interview Studio
+
+- Display the interview type, duration, difficulty, and candidate context at the top.
+- Separate the question, response area, and evaluation notes.
+- Make timer and interview controls prominent without dominating the screen.
+- Clearly identify AI-generated questions and provide faculty override controls.
+- Keep private evaluator notes separate from student-visible feedback.
+- Show when an evaluation is pending, completed, or requires faculty review.
+
+Test Builder
+
+- Use a two-panel layout: question library on the left and selected questions on the right.
+- Show question type, topic, difficulty, and marks as compact metadata.
+- Include a test preview before publishing.
+- Confirm before deleting questions or publishing an assessment.
+- Provide visible progress for saving, publishing, and processing results.
+
+## 10. Responsive behavior and accessibility
+
+- Desktop: full sidebar and multi-column dashboards.
+- Tablet: collapsible sidebar and fewer columns.
+- Mobile: compact header, drawer navigation, single-column cards, and horizontally scrollable tables where needed.
+- Keep critical actions visible and avoid placing primary actions below long content unnecessarily.
+- Support keyboard navigation, visible focus indicators, meaningful labels, and screen readers.
+- Aim for WCAG 2.2 AA contrast and accessibility practices.
+- Provide loading skeletons, empty states, error recovery, and confirmation messages for important actions.
+- For timed assessments, make remaining time readable and warn users before expiry.
+
+## 11. Design tokens for development
+
+Use CSS variables so the theme can be adjusted centrally.
+
+```
+
+:root {
+  /* Brand */
+  --color-primary: #2449D8;
+  --color-primary-hover: #1D3DB8;
+  --color-primary-soft: #E8EDFF;
+  --color-accent: #0F9D8A;
+
+  /* Surfaces */
+  --color-background: #F5F7FB;
+  --color-surface: #FFFFFF;
+  --color-border: #E4E8F0;
+
+  /* Typography */
+  --color-text-primary: #172033;
+  --color-text-secondary: #667085;
+  --font-family: "Inter", sans-serif;
+
+  /* Status */
+  --color-success: #15803D;
+  --color-warning: #B45309;
+  --color-error: #B42318;
+  --color-info: #1D4ED8;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Components */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-card: 0 1px 3px rgb(16 24 40 / 6%);
+  --sidebar-width: 248px;
+  --topbar-height: 68px;
+}
+
+```
+
+## 12. Final design rules
+
+1. Keep the application light-first and consistent across all roles.
+2. Use blue for primary actions and teal for positive progress.
+3. Prefer simple cards, clear hierarchy, and useful whitespace.
+4. Keep all spacing, typography, borders, and button sizes consistent.
+5. Prioritize real information over decorative visual effects.
+6. Never display fabricated readiness scores or imply AI assessments are infallible.
+7. Ensure every chart, status, and recommendation has a clear meaning.
+8. Build reusable components before implementing all dashboards.
+9. Design mobile and accessibility behavior as part of the initial system.
+10. Keep the experience focused on measurable student improvement, not merely attractive analytics.
+
+Recommended implementation order: establish the color and typography tokens, build the application shell, create the shared component library, then implement the student dashboard, faculty assessment tools, and placement analytics. This will make PlacementIQ feel like one coherent product rather than a collection of separate screens.
